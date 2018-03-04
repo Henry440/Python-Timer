@@ -31,31 +31,76 @@ def count(sek, minu, stu, mode):
 
         time.sleep(countspeed)
 
-        if sekunde < 10:
-            check_se = "0"
-        else:
-            check_se = " "
+        zahl_st1 = ""
+        zahl_st2 = ""
 
-        if minute < 10:
-            check_min = "0"
-        else:
-            check_min = " "
+        zahl_min1 = ""
+        zahl_min2 = ""
 
-        if stunde < 10:
-            check_st = "0"
-        else:
-            check_st = " "
+        zahl_sek1 = ""
+        zahl_sek2 = ""
+
+        sekunde = str(sekunde)
+        minute = str(minute)
+        stunde = str(stunde)
+
+        
+        for i in sekunde:
+            sekunde = int(sekunde)
+            if sekunde < 10:
+                zahl_sek1 = 0
+                zahl_sek2 = int(i)
+                sekunde = str(sekunde)
+            else:
+                if zahl_sek1 == "":
+                    zahl_sek1 = int(i)
+                    sekunde = str(sekunde)
+                else:
+                    zahl_sek2 = int(i)
+                    sekunde = str(sekunde)
+
+        for i in minute:
+            minute = int(minute)
+            if minute < 10:
+                zahl_min1 = 0
+                zahl_min2 = int(i)
+                minute = str(minute)
+            else:
+                if zahl_min1 == "":
+                    zahl_min1 = int(i)
+                    minute = str(minute)
+                else:
+                    zahl_min2 = int(i)
+                    minute = str(minute)
+
+        for i in stunde:
+            stunde = int(stunde)
+            if stunde < 10:
+                zahl_st1 = 0
+                zahl_st2 = int(i)
+                stunde = str(stunde)
+            else:
+                if zahl_st1 == "":
+                    zahl_st1 = int(i)
+                    stunde = str(stunde)
+                else:
+                    zahl_st2 = int(i)
+                    stunde = str(stunde)
             
+        sekunde = int(sekunde)
+        stunde = int(stunde)
+        minute = int(minute)
 
+        
         if mode == 1:
             cls()
-            print(check_st, stunde, " : ", check_min, minute, " : ", check_se, sekunde)   
+            print(zahl_st1, zahl_st2, " : ", zahl_min1, zahl_min2, " : ", zahl_sek1, zahl_sek2)   
         if mode == 2:
             cls()
-            print(check_st, stunde, " : ", check_min, minute)
+            print(zahl_st1, zahl_st2, " : ", zahl_min1, zahl_min2)
         if mode == 3:
             cls()
-            print(check_min, minute, " : ", check_se, sekunde)
+            print(zahl_min1, zahl_min2, " : ", zahl_sek1, zahl_sek2)
 
             
         if stunde == 0:

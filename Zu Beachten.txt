@@ -1,0 +1,4 @@
+1. Empfolen für Windows Bugs unter Linux Möglich
+2. In der Windows Eingabeaufforderung ausführen
+3. Regelmäßig auf Updates Prüfen
+4. Have Fun

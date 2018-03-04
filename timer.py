@@ -281,6 +281,9 @@ def normal():
         time.sleep(2)
         cls()
 
+    if form_inp == 4:
+        beenden()
+
     mode = form_inp
     stu = stunden_inp
     minu = minuten_inp

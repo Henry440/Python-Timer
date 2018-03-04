@@ -250,9 +250,7 @@ def normal():
     print("\n" *1)
 
     stunden_inp = int(input("Stunden : "))
-    print("\n")
     minuten_inp = int(input("Minuten : "))
-    print("\n")
     sekunden_inp = int(input("Sekunden : "))
     print("\n")
 
@@ -269,7 +267,7 @@ def normal():
         print("1) hh:mm:ss")
         print("2) hh:mm")
         print("3) mm:ss")
-
+        print("\n")
         print("4) Programm Beenden")
 
         form_inp = int(input("> "))
@@ -520,7 +518,7 @@ def main():
     while user_inp <= 0:
         print("\n"*2)
         print("Modus Wählen")
-        print("\n"*2)
+        print("\n"*1)
         print("1) Normal")
         print("2) Schule")
         print("3) Schleife")

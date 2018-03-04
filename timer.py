@@ -9,17 +9,51 @@ def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
 def count():
+    cls()
     global countspeed
     pass
 
 def converter():
+    cls()
     pass
 
 def beenden():
+    cls()
+
+    user_inp = "y"
+
+    print("\n" *2)
+    print("Wollen sie das Programm wirklich Beenden ?")
+    print("[y] JA / [n] NEIN")
+    print("")
+
+    user_inp = input("> ")
+    
+    if user_inp == "y":
+        cls()
+        print("Auf Wiedersehen")
+        time.sleep(1.5)
+        cls()
+        exit()
+    else:
+        cls()
+        main()
+
+def normal():
+    cls()
+    pass
+
+def schule():
+    cls()
+    pass
+
+def schleife():
+    cls()
     pass
 
 def main():
-
+    cls()
+    
     user_inp = 0
 
     while user_inp <= 0:
@@ -40,5 +74,16 @@ def main():
         time.sleep(2)
         cls()
 
+    if user_inp == 1:
+        normal()
+    elif user_inp == 2:
+        schule()
+    elif user_inp == 3:
+        schleife()
+    elif user_inp == 4:
+        beenden()
+    else:
+        main()
+    
 
 main()

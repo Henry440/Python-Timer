@@ -17,8 +17,13 @@ def cls():
 
 def count(sek, minu, stu, mode):
     cls()
+
+    sekunde = sek
+    minute = minu
+    stunde = stu
+
+    mode = mode
     global countspeed
-    pass
 
 def converter(sek, minu, stu, mode):
     cls()
@@ -73,7 +78,7 @@ def abgelaufen():
 
     weiter_inp = 0
     
-    while weiter_inp < 0:
+    while weiter_inp <= 0:
         print("\n" *2)
         print("Die Zeit ist um \n\n")
         print("Wie soll weiter verfahren werden ?")
@@ -83,8 +88,7 @@ def abgelaufen():
         print("2) Normalmodus")
         print("3) Beenden")
 
-        weiter_inp = int(input("> ")
-
+        weiter_inp = int(input("> "))
         cls()
 
     if weiter_inp > 3:

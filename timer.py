@@ -4,6 +4,7 @@ import time
 import os
 
 countspeed = 0.87
+schule_pos = 0
 
 def fehler():
     print("Ein Fehler ist Aufgetreten")
@@ -15,7 +16,7 @@ def fehler():
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-def count(sek, minu, stu, mode):
+def count(sek, minu, stu, mode, end):
     cls()
 
     sekunde = sek
@@ -23,7 +24,9 @@ def count(sek, minu, stu, mode):
     stunde = stu
 
     mode = mode
+    end = end
     global countspeed
+    global schule_pos
 
     aktiv = "true"
 
@@ -106,7 +109,11 @@ def count(sek, minu, stu, mode):
         if stunde == 0:
             if minute == 0:
                 if sekunde == 0:
-                    abgelaufen()
+                    if end == 1:
+                        abgelaufen()
+                    elif end == 2:
+                        schule_pos = schule_pos + 1
+                        schule(schule_pos)
 
         if sekunde > 0:
             sekunde = sekunde - 1
@@ -175,7 +182,9 @@ def converter(sek, minu, stu, mode):
                 time.sleep(2)
                 abgelaufen()
 
-    count(sek, minu, stu, mode)
+    end = 1
+
+    count(sek, minu, stu, mode, end)
 
 def abgelaufen():
     cls()
@@ -279,9 +288,36 @@ def normal():
 
     converter(sek, minu, stu, mode)
 
-def schule():
+def schule(pos):
     cls()
-    pass
+
+    anweisung = pos
+    schule_inp = 0
+    
+    if anweisung == "main_call":
+
+        while schule_inp <= 0:
+
+            print("\n" *2)
+            print("Wie lange ist der Schultag")
+            print("")
+            print("1) 5 Schulstunden")
+            print("2) 6 Schulstunden")
+            print("3) 7 Schulstunden")
+            print("4) 8 Schulstunden")
+            print("")
+            print("5) Beenden")
+            
+            schule_inp = int(input("> "))
+
+        if schule_inp > 5:
+            schule_inp = 2
+            print("Auf Standart gesetzt (2)")
+            time.sleep(2)
+            cls()
+
+        
+    
 
 def schleife():
     cls()
@@ -289,6 +325,7 @@ def schleife():
 
 def main():
     cls()
+    go = "main_call"
     
     user_inp = 0
 
@@ -314,7 +351,7 @@ def main():
     if user_inp == 1:
         normal()
     elif user_inp == 2:
-        schule()
+        schule(go)
     elif user_inp == 3:
         schleife()
     elif user_inp == 4:
@@ -322,5 +359,4 @@ def main():
     else:
         main()
     
-
 main()

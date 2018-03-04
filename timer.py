@@ -15,7 +15,7 @@ def fehler():
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-def count():
+def count(sek, minu, stu, mode):
     cls()
     global countspeed
     pass
@@ -49,6 +49,36 @@ def converter(sek, minu, stu, mode):
         fehler()
     if stunde < 0:
         fehler()
+
+    if sekunde == 0:
+        if minute > 0:
+            minute = minute - 1
+            sekunde = 60
+        else:
+            if stunde > 0:
+                minute = 59
+                sekunde = 60
+                stunde = stunde -1
+            else:
+                cls()
+                print("\n" *2)
+                print("Die Zeit ist um")
+                time.sleep(2)
+                abgelaufen()
+
+    count(sek, minu, stu, mode)
+
+def abgelaufen():
+    cls()
+    print("\n" *2)
+    print("Die Zeit ist um \n\n")
+    print("Wie soll weiter verfahren werden ?")
+    print("\n")
+
+    main()
+
+    
+    
 
 def beenden():
     cls()
@@ -114,7 +144,7 @@ def normal():
     mode = form_inp
     stu = stunden_inp
     minu = minuten_inp
-    sek = sekunden _inp
+    sek = sekunden_inp
 
     converter(sek, minu, stu, mode)
 

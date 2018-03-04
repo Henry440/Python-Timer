@@ -28,9 +28,36 @@ def count(sek, minu, stu, mode):
     aktiv = "true"
 
     while aktiv:
+
         time.sleep(countspeed)
-        print(stunde, ":", minute, ":", sekunde)
-        
+
+        if sekunde < 10:
+            check_se = "0"
+        else:
+            check_se = " "
+
+        if minute < 10:
+            check_min = "0"
+        else:
+            check_min = " "
+
+        if stunde < 10:
+            check_st = "0"
+        else:
+            check_st = " "
+            
+
+        if mode == 1:
+            cls()
+            print(check_st, stunde, " : ", check_min, minute, " : ", check_se, sekunde)   
+        if mode == 2:
+            cls()
+            print(check_st, stunde, " : ", check_min, minute)
+        if mode == 3:
+            cls()
+            print(check_min, minute, " : ", check_se, sekunde)
+
+            
         if stunde == 0:
             if minute == 0:
                 if sekunde == 0:

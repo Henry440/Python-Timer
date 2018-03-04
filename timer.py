@@ -25,6 +25,38 @@ def count(sek, minu, stu, mode):
     mode = mode
     global countspeed
 
+    aktiv = "true"
+
+    while aktiv:
+        time.sleep(countspeed)
+        print(stunde, ":", minute, ":", sekunde)
+        
+        if stunde == 0:
+            if minute == 0:
+                if sekunde == 0:
+                    abgelaufen()
+
+        if sekunde > 0:
+            sekunde = sekunde - 1
+            if sekunde < 0:
+                fehler()
+        else:
+            if sekunde == 0:
+                if minute > 0:
+                    sekunde = 59
+                    minute = minute - 1
+                else:
+                    if minute == 0:
+                        if stunde > 0:
+                            stunde = stunde - 1
+                            minute = 59
+                            sekunde = 59
+                        else:
+                            if stunde == 0:
+                                continue
+                
+
+        
 def converter(sek, minu, stu, mode):
     cls()
 

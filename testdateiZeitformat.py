@@ -1,3 +1,5 @@
+import time
+
 
 zahl = str(42)
 zahl1 = ""
@@ -11,4 +13,4 @@ for i in zahl:
 
 print(zahl1, zahl2)
 
-
+time.sleep(4)

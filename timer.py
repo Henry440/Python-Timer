@@ -70,16 +70,39 @@ def converter(sek, minu, stu, mode):
 
 def abgelaufen():
     cls()
-    print("\n" *2)
-    print("Die Zeit ist um \n\n")
-    print("Wie soll weiter verfahren werden ?")
-    print("\n")
 
-    main()
-
+    weiter_inp = 0
     
+    while weiter_inp < 0:
+        print("\n" *2)
+        print("Die Zeit ist um \n\n")
+        print("Wie soll weiter verfahren werden ?")
+        print("\n")
     
+        print("1) Zum Menü zurück")
+        print("2) Normalmodus")
+        print("3) Beenden")
 
+        weiter_inp = int(input("> ")
+
+        cls()
+
+    if weiter_inp > 3:
+        weiter_inp = 1
+        print("Auf Standart (1) gesetzt")
+        time.sleep(2)
+        cls()
+
+    if weiter_inp == 1:
+         main()
+    if weiter_inp == 2:
+        normal()
+    if weiter_inp == 3:
+        beenden()
+    else:
+        main()
+
+            
 def beenden():
     cls()
 

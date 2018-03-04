@@ -5,6 +5,13 @@ import os
 
 countspeed = 0.87
 
+def fehler():
+    print("Ein Fehler ist Aufgetreten")
+    print("kehre zu main zurück")
+    time.sleep(2)
+    cls()
+    main()
+
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
@@ -13,9 +20,35 @@ def count():
     global countspeed
     pass
 
-def converter():
+def converter(sek, minu, stu, mode):
     cls()
-    pass
+
+    sekunde = sek
+    minute = minu
+    stunde = stu
+
+    mode = mode
+
+    while sekunde > 59:
+        sekunde = sekunde -60
+        if sekunde < 0:
+            fehler()
+        else:
+            minute = minute + 1
+
+    while minute > 59:
+        minute = minute - 60
+        if minute < 0:
+            fehler()
+        else:
+            stunde = stunde +1
+
+    if sekunde < 0:
+        fehler()
+    if minute < 0:
+        fehler()
+    if stunde < 0:
+        fehler()
 
 def beenden():
     cls()
@@ -77,8 +110,13 @@ def normal():
         print("Auf Standart gesetzt (1)")
         time.sleep(2)
         cls()
-        exit()
-        
+
+    mode = form_inp
+    stu = stunden_inp
+    minu = minuten_inp
+    sek = sekunden _inp
+
+    converter(sek, minu, stu, mode)
 
 def schule():
     cls()

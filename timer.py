@@ -41,7 +41,44 @@ def beenden():
 
 def normal():
     cls()
-    pass
+
+    print("\n" *2)
+    print("Bitte die Zeit eingeben")
+    print("\n" *1)
+
+    stunden_inp = int(input("Stunden : "))
+    print("\n")
+    minuten_inp = int(input("Minuten : "))
+    print("\n")
+    sekunden_inp = int(input("Sekunden : "))
+    print("\n")
+
+    cls()
+
+    print("\n" *2)
+    print("Zeitformat Wählen")
+    print("\n" *2)
+
+    form_inp = 0
+    
+    while form_inp <= 0:
+
+        print("1) hh:mm:ss")
+        print("2) hh:mm")
+        print("3) mm:ss")
+
+        print("4) Programm Beenden")
+
+        form_inp = int(input("> "))
+        cls()
+
+    if form_inp > 4:
+        form_inp = 1
+        print("Auf Standart gesetzt (1)")
+        time.sleep(2)
+        cls()
+        exit()
+        
 
 def schule():
     cls()
@@ -70,6 +107,7 @@ def main():
         cls()
  
     if user_inp > 4:
+        user_inp = 1
         print("Auf Standart gesetzt (1)")
         time.sleep(2)
         cls()

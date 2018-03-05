@@ -5,6 +5,7 @@ import os
 
 countspeed = 0.87
 schule_pos = 0
+schule_inp = 0
 
 def fehler():
     print("Ein Fehler ist Aufgetreten")
@@ -291,9 +292,9 @@ def normal():
 
 def schule(pos):
     cls()
-
+    
     anweisung = pos
-    schule_inp = 0
+    global schule_inp
     schule_lauf = 3
     global schule_pos
     
@@ -336,178 +337,67 @@ def schule(pos):
             
         if schule == 4:
             schule_lauf = int(15)
-        
 
-    if schule_pos == 0:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
 
-    anweisung = int(anweisung)
+    else:
+        anweisung = int(anweisung)
+
+        if anweisung >= 0 :
+            schule_lauf = schule_lauf - 1
+            if schule_pos % 2 == 0:
+                block = 1
+            elif schule_pos %2 == 1:
+                if schule_pos == 3:
+                    block = 3
+                elif schule_pos == 9:
+                    block = 3
+                else:
+                    block = 2
+            
+            schule_block(schule_lauf, block)
+
     
-    if anweisung == 1:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 5
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
 
-    if anweisung == 2:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
+def schul_block(lauf, block):
 
-    if anweisung == 3:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 30
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
+    lauf = int(lauf)
+    block = int(block)
+    global schule_pos
+    global schule_inp
 
-    if anweisung == 4:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
 
-    if anweisung == 5:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 5
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 6:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 7:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 5
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 8:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 9:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 30
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 10:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 11:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 5
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 12:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 13:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 5
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung == 14:
-        if schule_lauf == 0:
-            abgelaufen()
-        schule_lauf = schule_lauf -1
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if anweisung > 14:
+    if lauf == 0:
+        schule_pos = 0
+        schule_inp = 0
         abgelaufen()
-         
+
+    if block == 1:
+                     
+        sek = 00
+        minu = 45
+        stu = 0
+        mode = 3
+        end = 2
+        count(sek, minu, stu, mode, end)
+                     
+    if block == 2:
+
+        sek = 00
+        minu = 5
+        stu = 0
+        mode = 3
+        end = 2
+        count(sek, minu, stu, mode, end)
+
+    if block == 3:
+        sek = 00
+        minu = 30
+        stu = 0
+        mode = 3
+        end = 2
+        count(sek, minu, stu, mode, end)
+
+        
 def schleife():
     cls()
     pass

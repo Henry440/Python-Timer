@@ -504,6 +504,9 @@ def schule(pos):
         mode = 3
         end = 2
         count(sek, minu, stu, mode, end)
+
+    if anweisung > 14:
+        abgelaufen()
          
 def schleife():
     cls()

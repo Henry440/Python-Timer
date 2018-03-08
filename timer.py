@@ -3,7 +3,7 @@
 import time
 import os
 
-countspeed = 0.87
+countspeed = 0.95
 schule_pos = 0
 schule_inp = 0
 
@@ -23,7 +23,6 @@ def count(sek, minu, stu, mode, end):
     sekunde = sek
     minute = minu
     stunde = stu
-
     mode = mode
     end = end
     global countspeed
@@ -134,16 +133,14 @@ def count(sek, minu, stu, mode, end):
                         else:
                             if stunde == 0:
                                 continue
-                
 
-        
+                
 def converter(sek, minu, stu, mode):
     cls()
 
     sekunde = sek
     minute = minu
     stunde = stu
-
     mode = mode
 
     while sekunde > 59:
@@ -182,9 +179,8 @@ def converter(sek, minu, stu, mode):
                 print("Die Zeit ist um")
                 time.sleep(2)
                 abgelaufen()
-
+                
     end = 1
-
     count(sek, minu, stu, mode, end)
 
 def abgelaufen():
@@ -300,7 +296,6 @@ def schleife():
 
 def main():
     cls()
-    go = 911
     
     user_inp = 0
 

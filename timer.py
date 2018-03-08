@@ -292,111 +292,7 @@ def normal():
 
 def schule(pos):
     cls()
-    
-    anweisung = pos
-    global schule_inp
-    schule_lauf = 3
-    global schule_pos
-    
-    if anweisung == "main_call":
-
-        while schule_inp <= 0:
-
-            print("\n" *2)
-            print("Wie lange ist der Schultag")
-            print("")
-            print("1) 5 Schulstunden")
-            print("2) 6 Schulstunden")
-            print("3) 7 Schulstunden")
-            print("4) 8 Schulstunden")
-            print("")
-            print("5) Beenden")
-            
-            schule_inp = int(input("> "))
-
-        if schule_inp > 5:
-            schule_inp = 2
-            print("Auf Standart gesetzt (2)")
-            time.sleep(2)
-            cls()
-
-        if schule_inp == 5:
-            cls()
-            beenden()
-
-        schuleu = schule_inp
-
-        if schuleu == 1:
-            schule_lauf = int(9)
-            
-        if schuleu == 2:
-            schule_lauf = int(11)
-            
-        if schuleu == 3:
-            schule_lauf = int(13)
-            
-        if schule == 4:
-            schule_lauf = int(15)
-
-
-    else:
-        anweisung = int(anweisung)
-
-        if anweisung >= 0 :
-            schule_lauf = schule_lauf - 1
-            if schule_pos % 2 == 0:
-                block = 1
-            elif schule_pos %2 == 1:
-                if schule_pos == 3:
-                    block = 3
-                elif schule_pos == 9:
-                    block = 3
-                else:
-                    block = 2
-            
-            schule_block(schule_lauf, block)
-
-    
-
-def schul_block(lauf, block):
-
-    lauf = int(lauf)
-    block = int(block)
-    global schule_pos
-    global schule_inp
-
-
-    if lauf == 0:
-        schule_pos = 0
-        schule_inp = 0
-        abgelaufen()
-
-    if block == 1:
-                     
-        sek = 00
-        minu = 45
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-                     
-    if block == 2:
-
-        sek = 00
-        minu = 5
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
-    if block == 3:
-        sek = 00
-        minu = 30
-        stu = 0
-        mode = 3
-        end = 2
-        count(sek, minu, stu, mode, end)
-
+    pass
         
 def schleife():
     cls()
@@ -404,7 +300,7 @@ def schleife():
 
 def main():
     cls()
-    go = "main_call"
+    go = 911
     
     user_inp = 0
 
